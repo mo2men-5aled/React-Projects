@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-
-const App = () => {
-    return <div>Hello World</div>
+import React from "react";
+import ReactDOM from "react-dom";
+function getTime() {
+  return new Date().toLocaleTimeString();
 }
+const App = () => {
+  return (
+    <div>
+      <label className="label">Curent Time :</label>
+      <h3>{getTime()}</h3>
+    </div>
+  );
+};
 
-
-ReactDOM.render(
-    <App />,
-    document.querySelector('#root')
-)
+ReactDOM.render(<App />, document.querySelector("#root"));
