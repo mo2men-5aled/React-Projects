@@ -5,8 +5,6 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = { lat: null, long: null, errorMeassage: "" };
-  }
-  render() {
     window.navigator.geolocation.getCurrentPosition(
       (postion) =>
         this.setState({
@@ -17,13 +15,21 @@ class App extends React.Component {
         this.setState({ errorMeassage: err.message });
       }
     );
-    return (
-      <div>
-        <div>Latitude : {this.state.lat}</div>
-        <div>longitude: {this.state.long}</div>
-        <div>Error: {this.state.errorMeassage}</div>
-      </div>
-    );
+  }
+  render() {
+    if (this.state.errorMeassage && !(this.state.lat && this.state.long)) {
+      return <div>Error: {this.state.errorMeassage}</div>;
+    }
+
+    if (!this.state.errorMeassage && this.state.lat && this.state.long) {
+      return (
+        <div>
+          <div>Latitude : {this.state.lat}</div>
+          <div>longitude: {this.state.long}</div>
+        </div>
+      );
+    }
+    return <div>Please wait :^I</div>;
   }
 }
 
