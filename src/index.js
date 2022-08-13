@@ -4,7 +4,7 @@ import DisplaySeason from "./DisplaySeason";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = { lat: null };
+    this.state = { lat: null, long: null };
   }
   render() {
     window.navigator.geolocation.getCurrentPosition(
