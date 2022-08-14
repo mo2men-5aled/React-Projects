@@ -22,14 +22,9 @@ class App extends React.Component {
     }
 
     if (!this.state.errorMeassage && this.state.lat && this.state.long) {
-      return (
-        <div>
-          <div>Latitude : {this.state.lat}</div>
-          <div>longitude: {this.state.long}</div>
-        </div>
-      );
+      return <DisplaySeason lat={this.state.lat} />;
     }
-    return <div>Please wait :^I</div>;
+    return <div>Please wait :^I </div>;
   }
 }
 
