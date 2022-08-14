@@ -2,17 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import DisplaySeason from "./DisplaySeason";
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = { lat: null, long: null, errorMeassage: "" };
-  }
+  state = { lat: null, long: null, errorMeassage: "" };
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      (postion) =>
+      (postion) => {
         this.setState({
           lat: postion.coords.latitude,
           long: postion.coords.longitude,
-        }),
+        });
+      },
       (err) => {
         this.setState({ errorMeassage: err.message });
       }
