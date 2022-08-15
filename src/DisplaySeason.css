@@ -14,3 +14,10 @@
   align-items: center;
   height: 100vh;
 }
+
+.summer {
+  background-color: rgba(255, 166, 0, 0.435);
+}
+.winter {
+  background-color: aliceblue;
+}
