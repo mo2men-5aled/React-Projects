@@ -1,3 +1,4 @@
+import "./DisplaySeason.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import DisplaySeason from "./DisplaySeason";
