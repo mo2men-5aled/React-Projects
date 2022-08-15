@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import DisplaySeason from "./DisplaySeason";
+import Spinner from "./Spinner";
 class App extends React.Component {
   state = { lat: null, long: null, errorMeassage: "" };
   componentDidMount() {
@@ -24,7 +25,7 @@ class App extends React.Component {
     if (!this.state.errorMeassage && this.state.lat && this.state.long) {
       return <DisplaySeason lat={this.state.lat} />;
     }
-    return <div>Please wait :^I </div>;
+    return <Spinner message="Please accept the location request" />;
   }
 }
 
