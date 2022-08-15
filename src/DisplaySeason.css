@@ -14,7 +14,17 @@
   align-items: center;
   height: 100vh;
 }
+h1 {
+  font-size: 100px;
+}
 
+.display.winter i {
+  color: aquamarine;
+}
+
+.display.summer i {
+  color: orange;
+}
 .summer {
   background-color: rgba(255, 166, 0, 0.435);
 }

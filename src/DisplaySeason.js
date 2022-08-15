@@ -1,7 +1,7 @@
 import "./DisplaySeason.css";
 import React from "react";
 const seasonConfig = {
-  summer: { text: "let's hit hte beach", icon: "sun" },
+  summer: { text: "let's hit the beach", icon: "sun" },
   winter: { text: "Burr, it is frozen", icon: "snowflake" },
 };
 const getSeason = (lat, month) => {
