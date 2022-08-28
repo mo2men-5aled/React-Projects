@@ -1,5 +1,6 @@
 import React from "react";
 import SongList from "./songList";
+import songDetail from "./SongDetail";
 
 const App = () => {
   return (
