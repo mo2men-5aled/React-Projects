@@ -6,7 +6,7 @@ const PageTwo = () => {
 };
 
 const PageOne = () => {
-  return <div>Page One</div>;
+  return <div>Page One s</div>;
 };
 
 const App = () => {
