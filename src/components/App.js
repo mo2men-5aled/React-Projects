@@ -1,8 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import PageOne from "./PageOne";
-import PageTwo from "./PageTwo";
+const PageTwo = () => {
+  return <div>Page Two</div>;
+};
+
+const PageOne = () => {
+  return <div>Page One</div>;
+};
 
 const App = () => {
   return (
