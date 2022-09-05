@@ -43,7 +43,7 @@ class GoogleAuth extends React.Component {
       return (
         <button className="ui red google button" onClick={this.onSignOutClick}>
           <i className="google icon" />
-          Sign Out
+          {`Sign out ${this.auth.currentUser.get().gv.gZ} ..?`}
         </button>
       );
     } else {
