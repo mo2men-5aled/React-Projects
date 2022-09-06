@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchStreams } from "../../actions";
 import { Link } from "react-router-dom";
+import history from "../../history";
 
 class StreamList extends React.Component {
   componentDidMount() {
@@ -32,7 +33,15 @@ class StreamList extends React.Component {
           {this.renderAdmin(stream)}
           <i className="lage middle aligned icon camera" />
           <div className="content">
-            {stream.title}
+            <Link
+              className="header"
+              to={`streams/show/${stream.id}`}
+              onClick={() => {
+                history.push();
+              }}
+            >
+              {stream.title}
+            </Link>
             <div className="description">{stream.description}</div>
           </div>
         </div>
