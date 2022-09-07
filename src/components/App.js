@@ -5,9 +5,10 @@ const App = () => {
   //Array destructuring
   const [resource, setResource] = useState("posts");
   return (
-    <div>
+    <div className="ui container">
       <div>
         <button
+          className="ui left attached button"
           onClick={() => {
             setResource("posts");
           }}
@@ -15,6 +16,7 @@ const App = () => {
           Posts
         </button>
         <button
+          className="ui right attached button"
           onClick={() => {
             setResource("todos");
           }}
