@@ -3,20 +3,20 @@ import ResourceList from "./ResourceList";
 
 const App = () => {
   //Array destructuring
-  const [resource, setResource] = useState("pla pla pla");
+  const [resource, setResource] = useState("posts");
   return (
     <div>
       <div>
         <button
           onClick={() => {
-            setResource("Posts");
+            setResource("posts");
           }}
         >
           Posts
         </button>
         <button
           onClick={() => {
-            setResource("Todos");
+            setResource("todos");
           }}
         >
           Todos
