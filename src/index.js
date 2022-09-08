@@ -1,33 +1,28 @@
 import "./DisplaySeason.css";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import DisplaySeason from "./DisplaySeason";
 import Spinner from "./Spinner";
-class App extends React.Component {
-  state = { lat: null, long: null, errorMeassage: "" };
-  componentDidMount() {
-    window.navigator.geolocation.getCurrentPosition(
-      (postion) => {
-        this.setState({
-          lat: postion.coords.latitude,
-          long: postion.coords.longitude,
-        });
-      },
-      (err) => {
-        this.setState({ errorMeassage: err.message });
-      }
-    );
-  }
-  render() {
-    if (this.state.errorMeassage && !(this.state.lat && this.state.long)) {
-      return <div>Error: {this.state.errorMeassage}</div>;
-    }
 
-    if (!this.state.errorMeassage && this.state.lat && this.state.long) {
-      return <DisplaySeason lat={this.state.lat} />;
-    }
-    return <Spinner message="Please accept the location request" />;
+const App = () => {
+  const [lat, setLat] = useState(null);
+  const [errorMeassage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    window.navigator.geolocation.getCurrentPosition(
+      (postion) => setLat(postion.coords.latitude),
+      (err) => setErrorMessage(err.message)
+    );
+  }, []);
+
+  if (errorMeassage && !lat) {
+    return <div>Error: {errorMeassage}</div>;
   }
-}
+
+  if (!errorMeassage && lat) {
+    return <DisplaySeason lat={lat} />;
+  }
+  return <Spinner message="Please accept the location request" />;
+};
 
 ReactDOM.render(<App />, document.querySelector("#root"));
