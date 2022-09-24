@@ -86,6 +86,7 @@ const Restaurant = (props) => {
                         {props.user && props.user.id === review.user_id && (
                           <div className="row">
                             <a
+                              href=""
                               onClick={() => deleteReview(review._id, index)}
                               className="btn btn-primary col-lg-5 mx-1 mb-1"
                             >

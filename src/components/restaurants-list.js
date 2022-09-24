@@ -75,7 +75,7 @@ const RestaurantsList = (props) => {
   };
 
   const findByCuisine = () => {
-    if (searchCuisine == "All Cuisines") {
+    if (searchCuisine === "All Cuisines") {
       refreshList();
     } else {
       find(searchCuisine, "cuisine");
@@ -96,7 +96,7 @@ const RestaurantsList = (props) => {
               />
               <div className="input-group-append">
                 <button
-                  className="btn btn-outline-secondary"
+                  className="btn btn-secondary"
                   type="button"
                   onClick={findByName}
                 >
@@ -116,7 +116,7 @@ const RestaurantsList = (props) => {
               />
               <div className="input-group-append">
                 <button
-                  className="btn btn-outline-secondary"
+                  className="btn btn-secondary"
                   type="button"
                   onClick={findByZip}
                 >
@@ -125,18 +125,21 @@ const RestaurantsList = (props) => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col">
             <div className="input-group">
               <select onChange={onChangeSearchCuisine}>
                 {cuisines.map((cuisine) => {
                   return (
-                    <option value={cuisine}> {cuisine.substr(0, 20)} </option>
+                    <option key={cuisine} value={cuisine}>
+                      {" "}
+                      {cuisine.substr(0, 20)}{" "}
+                    </option>
                   );
                 })}
               </select>
               <div className="input-group-append">
                 <button
-                  className="btn btn-outline-secondary"
+                  className="btn btn-secondary"
                   type="button"
                   onClick={findByCuisine}
                 >
@@ -151,7 +154,7 @@ const RestaurantsList = (props) => {
         {restaurants.map((restaurant) => {
           const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
           return (
-            <div className="col-lg-4 pb-2">
+            <div className="col-lg-4 pb-2" key={restaurant.zipcode}>
               <div className="card" style={{ justifyContent: "center" }}>
                 <div className="card-body">
                   <h5 className="card-title">{restaurant.name}</h5>
@@ -171,6 +174,7 @@ const RestaurantsList = (props) => {
                     </Link>
                     <a
                       target="_blank"
+                      rel="noopener noreferrer"
                       href={"https://www.google.com/maps/place/" + address}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
