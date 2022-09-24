@@ -46,26 +46,21 @@ const Restaurant = (props) => {
     <div>
       {restaurant ? (
         <div>
-          <div className="card">
-            <div className="card-body">
-              <h5>{restaurant.name}</h5>
-              <p>
-                <strong>Cuisine: </strong>
-                {restaurant.cuisine}
-                <br />
-                <strong>Address: </strong>
-                {restaurant.address.building} {restaurant.address.street},{" "}
-                {restaurant.address.zipcode}
-              </p>
-              <Link
-                to={"/restaurants/" + props.match.params.id + "/review"}
-                className="btn btn-primary"
-              >
-                Add Review
-              </Link>
-            </div>
-          </div>
-          <br />
+          <h5>{restaurant.name}</h5>
+          <p>
+            <strong>Cuisine: </strong>
+            {restaurant.cuisine}
+            <br />
+            <strong>Address: </strong>
+            {restaurant.address.building} {restaurant.address.street},{" "}
+            {restaurant.address.zipcode}
+          </p>
+          <Link
+            to={"/restaurants/" + props.match.params.id + "/review"}
+            className="btn btn-primary"
+          >
+            Add Review
+          </Link>
           <h4> Reviews </h4>
           <div className="row">
             {restaurant.reviews.length > 0 ? (
