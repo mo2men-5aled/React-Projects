@@ -96,7 +96,7 @@ const RestaurantsList = (props) => {
               />
               <div className="input-group-append">
                 <button
-                  className="btn btn-secondary"
+                  className="btn btn-primary"
                   type="button"
                   onClick={findByName}
                 >
@@ -116,7 +116,7 @@ const RestaurantsList = (props) => {
               />
               <div className="input-group-append">
                 <button
-                  className="btn btn-secondary"
+                  className="btn btn-primary"
                   type="button"
                   onClick={findByZip}
                 >
@@ -126,8 +126,12 @@ const RestaurantsList = (props) => {
             </div>
           </div>
           <div className="col">
-            <div className="input-group">
-              <select onChange={onChangeSearchCuisine}>
+            <div className="input-group" style={{ justifyContent: "flex-end" }}>
+              <select
+                className="dropdown"
+                onChange={onChangeSearchCuisine}
+                style={{ width: "84%", backgroundColor: "white" }}
+              >
                 {cuisines.map((cuisine) => {
                   return (
                     <option key={cuisine} value={cuisine}>
@@ -139,7 +143,7 @@ const RestaurantsList = (props) => {
               </select>
               <div className="input-group-append">
                 <button
-                  className="btn btn-secondary"
+                  className="btn btn-primary"
                   type="button"
                   onClick={findByCuisine}
                 >
@@ -168,7 +172,7 @@ const RestaurantsList = (props) => {
                   <div>
                     <Link
                       to={"/restaurants/" + restaurant._id}
-                      className="btn btn-secondary col-lg-5 mx-1 mb-1"
+                      className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Reviews
                     </Link>
@@ -176,7 +180,7 @@ const RestaurantsList = (props) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={"https://www.google.com/maps/place/" + address}
-                      className="btn btn-secondary col-lg-5 mx-1 mb-1"
+                      className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Map
                     </a>
