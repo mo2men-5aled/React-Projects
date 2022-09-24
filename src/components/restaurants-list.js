@@ -168,7 +168,7 @@ const RestaurantsList = (props) => {
                   <div>
                     <Link
                       to={"/restaurants/" + restaurant._id}
-                      className="btn btn-primary col-lg-5 mx-1 mb-1"
+                      className="btn btn-secondary col-lg-5 mx-1 mb-1"
                     >
                       View Reviews
                     </Link>
@@ -176,7 +176,7 @@ const RestaurantsList = (props) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={"https://www.google.com/maps/place/" + address}
-                      className="btn btn-primary col-lg-5 mx-1 mb-1"
+                      className="btn btn-secondary col-lg-5 mx-1 mb-1"
                     >
                       View Map
                     </a>
