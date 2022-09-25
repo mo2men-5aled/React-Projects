@@ -21,7 +21,11 @@ function App() {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/restaurants" className="navbar-brand">
+        <a
+          href="/restaurants"
+          className="navbar-brand"
+          style={{ marginLeft: "10px" }}
+        >
           Restaurant Reviews
         </a>
         <div className="navbar-nav mr-auto">

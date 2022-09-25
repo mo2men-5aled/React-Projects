@@ -1,6 +1,4 @@
-import { set } from "lodash";
 import React, { useState } from "react";
-import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
 
 const Login = (props) => {
   const initialUserState = {
