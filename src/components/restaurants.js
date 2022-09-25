@@ -71,8 +71,8 @@ const Restaurant = (props) => {
             {restaurant.reviews.length > 0 ? (
               restaurant.reviews.map((review, index) => {
                 return (
-                  <div className="col-lg-4 pb-1" key={index}>
-                    <div className="card">
+                  <div className="col-lg-4 pb-2" key={index}>
+                    <div className="card text-center">
                       <div className="card-body">
                         <p className="card-text">
                           {review.text}
@@ -84,9 +84,8 @@ const Restaurant = (props) => {
                           {review.date}
                         </p>
                         {props.user && props.user.id === review.user_id && (
-                          <div className="row">
+                          <div>
                             <a
-                              href=""
                               onClick={() => deleteReview(review._id, index)}
                               className="btn btn-primary col-lg-5 mx-1 mb-1"
                             >
